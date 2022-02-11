@@ -8,11 +8,21 @@ function CardFactory(title, imageSrc) {
 
 function CardItem({ card, onCardClick }) {
   return (
-    <li key={card.id} id={card.id} onClick={onCardClick}>
+    <li id={card.id} onClick={onCardClick}>
       <img src={card.imageSrc} alt={card.title} />
       <h3>{card.title}</h3>
     </li>
   );
 }
 
-export { CardFactory, CardItem };
+function CardList({ cards, onCardClick }) {
+  return (
+    <ul>
+      {cards.map((card) => {
+        return <CardItem key={card.id} card={card} onCardClick={onCardClick} />;
+      })}
+    </ul>
+  );
+}
+
+export { CardFactory, CardItem, CardList };

@@ -21,3 +21,9 @@ img {
   height: 150px;
   width: auto;
 }
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
