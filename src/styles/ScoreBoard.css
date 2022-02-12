@@ -1,0 +1,10 @@
+.score-board {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.score {
+  font-size: 22px;
+}

@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.slogan {
+  font-size: 36px;
+}
+
+.logo {
+  height: auto;
+  width: 50px;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
