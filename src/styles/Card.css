@@ -27,3 +27,7 @@
   flex-wrap: wrap;
   gap: 32px;
 }
+
+main {
+  flex: 1 1 auto;
+}
