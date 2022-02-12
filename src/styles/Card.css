@@ -6,7 +6,7 @@ li {
   gap: 8px;
   border: 1px solid black;
   border-radius: 8px;
-  padding: 16px 0px;
+  padding: 16px;
 }
 
 li h3 {
@@ -19,7 +19,7 @@ li * {
 
 img {
   height: 150px;
-  width: auto;
+  width: 150px;
 }
 
 ul {
