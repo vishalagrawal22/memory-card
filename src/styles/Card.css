@@ -1,4 +1,4 @@
-li {
+.card {
   list-style-type: none;
   display: inline-flex;
   flex-direction: column;
@@ -9,20 +9,20 @@ li {
   padding: 16px;
 }
 
-li h3 {
-  margin: 0px;
-}
-
-li * {
+.card * {
   pointer-events: none;
 }
 
-img {
+.card h3 {
+  margin: 0px;
+}
+
+.card img {
   height: 150px;
   width: 150px;
 }
 
-ul {
+.card-list {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;

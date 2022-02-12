@@ -9,7 +9,7 @@ function CardFactory(title, imageSrc) {
 
 function CardItem({ card, onCardClick }) {
   return (
-    <li id={card.id} onClick={onCardClick}>
+    <li className="card" id={card.id} onClick={onCardClick}>
       <img src={card.imageSrc} alt={card.title} />
       <h3>{card.title}</h3>
     </li>
@@ -30,7 +30,7 @@ function CardList({ cards, shuffleCards, onValidClick, onInvalidClick }) {
   }
 
   return (
-    <ul>
+    <ul className="card-list">
       {cards.map((card) => {
         return <CardItem key={card.id} card={card} onCardClick={onCardClick} />;
       })}
