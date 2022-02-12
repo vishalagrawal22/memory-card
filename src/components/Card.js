@@ -30,11 +30,15 @@ function CardList({ cards, shuffleCards, onValidClick, onInvalidClick }) {
   }
 
   return (
-    <ul className="card-list">
-      {cards.map((card) => {
-        return <CardItem key={card.id} card={card} onCardClick={onCardClick} />;
-      })}
-    </ul>
+    <main>
+      <ul className="card-list">
+        {cards.map((card) => {
+          return (
+            <CardItem key={card.id} card={card} onCardClick={onCardClick} />
+          );
+        })}
+      </ul>
+    </main>
   );
 }
 
