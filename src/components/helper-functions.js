@@ -17,4 +17,25 @@ function getDistinctNumberArrayInRange(rangeStart, rangeEnd, arrayLength) {
   return Array.from(numbers);
 }
 
-export { getRandomInt, getDistinctNumberArrayInRange };
+function deepCopy(original) {
+  return JSON.parse(JSON.stringify(original));
+}
+
+function swapIndex(array, index1, index2) {
+  const temp = array[index1];
+  array[index1] = array[index2];
+  array[index2] = temp;
+}
+
+function shuffle(og_array) {
+  const array = deepCopy(og_array);
+  let index = array.length - 1;
+  while (index !== 0) {
+    let pick = getRandomInt(0, index);
+    swapIndex(array, index, pick);
+    index--;
+  }
+  return array;
+}
+
+export { getRandomInt, getDistinctNumberArrayInRange, shuffle };
