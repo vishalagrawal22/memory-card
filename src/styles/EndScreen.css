@@ -1,0 +1,27 @@
+.end-screen-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-screen {
+  background-color: white;
+  width: 500px;
+  padding: 32px;
+  border-radius: 10px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.end-screen p {
+  padding: 16px;
+  margin: 0px;
+  margin-bottom: 16px;
+}
+
+.end-screen button {
+  padding: 16px;
+}
