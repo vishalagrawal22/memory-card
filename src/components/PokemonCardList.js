@@ -2,12 +2,7 @@ import { useEffect, useState } from 'react';
 import { getDistinctNumberArrayInRange, shuffle } from './helper-functions';
 import { CardFactory, CardList } from './Card';
 
-function PokemonCardList({
-  numberOfCards,
-  onValidClick,
-  onInvalidClick,
-  onFinish,
-}) {
+function PokemonCardList({ numberOfCards, onValidClick, onInvalidClick }) {
   const [cards, setCards] = useState([]);
   useEffect(() => {
     async function getPokemonCards(ids) {
@@ -35,6 +30,7 @@ function PokemonCardList({
       const pokemonCards = await getPokemonCards(ids);
       setCards(pokemonCards);
     }
+
     fetchPokemonData();
   }, [numberOfCards]);
 
@@ -48,7 +44,6 @@ function PokemonCardList({
       shuffleCards={shuffleCards}
       onValidClick={onValidClick}
       onInvalidClick={onInvalidClick}
-      onFinish={onFinish}
     />
   );
 }

@@ -16,13 +16,7 @@ function CardItem({ card, onCardClick }) {
   );
 }
 
-function CardList({
-  cards,
-  shuffleCards,
-  onValidClick,
-  onInvalidClick,
-  onFinish,
-}) {
+function CardList({ cards, shuffleCards, onValidClick, onInvalidClick }) {
   const [expiredIds, setExpiredIds] = useState([]);
   function onCardClick(event) {
     const id = event.target.id;
@@ -31,11 +25,7 @@ function CardList({
     } else {
       shuffleCards();
       onValidClick();
-      if (expiredIds.length + 1 === cards.length) {
-        onFinish();
-      } else {
-        setExpiredIds([...expiredIds, id]);
-      }
+      setExpiredIds([...expiredIds, id]);
     }
   }
 
