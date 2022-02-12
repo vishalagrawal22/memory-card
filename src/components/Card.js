@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import uniqid from 'uniqid';
 import '../styles/Card.css';
 
@@ -15,7 +16,29 @@ function CardItem({ card, onCardClick }) {
   );
 }
 
-function CardList({ cards, onCardClick }) {
+function CardList({
+  cards,
+  shuffleCards,
+  onValidClick,
+  onInvalidClick,
+  onFinish,
+}) {
+  const [expiredIds, setExpiredIds] = useState([]);
+  function onCardClick(event) {
+    const id = event.target.id;
+    if (expiredIds.findIndex((expiredId) => id === expiredId) !== -1) {
+      onInvalidClick();
+    } else {
+      shuffleCards();
+      onValidClick();
+      if (expiredIds.length + 1 === cards.length) {
+        onFinish();
+      } else {
+        setExpiredIds([...expiredIds, id]);
+      }
+    }
+  }
+
   return (
     <ul>
       {cards.map((card) => {
