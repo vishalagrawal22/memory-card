@@ -1,0 +1,18 @@
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

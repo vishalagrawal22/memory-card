@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { PokemonCardList } from './components/PokemonCardList';
+import { EndScreen } from './components/EndScreen';
+import { GameDisplay } from './components/GameDisplay';
+import './styles/common.css';
 
 function App() {
   const numberOfCards = 12;
@@ -20,6 +22,14 @@ function App() {
     });
   }
 
+  function startNewGame() {
+    setCurrentScore(0);
+    setGameStatus({
+      isPending: true,
+      clearedAll: false,
+    });
+  }
+
   useEffect(() => {
     setMaxScore((maxScore) => Math.max(maxScore, currentScore));
   }, [currentScore]);
@@ -34,19 +44,24 @@ function App() {
 
   if (gameStatus.isPending) {
     return (
-      <PokemonCardList
-        numberOfCards={numberOfCards}
-        onValidClick={onValidClick}
-        onInvalidClick={onInvalidClick}
-      ></PokemonCardList>
+      <>
+        <GameDisplay
+          currentScore={currentScore}
+          maxScore={maxScore}
+          numberOfCards={numberOfCards}
+          onValidClick={onValidClick}
+          onInvalidClick={onInvalidClick}
+        />
+      </>
     );
   } else {
     return (
-      <div>
-        Current Score: {currentScore}
-        <br />
-        Max Score: {maxScore}
-      </div>
+      <EndScreen
+        currentScore={currentScore}
+        maxScore={maxScore}
+        startNewGame={startNewGame}
+        gameStatus={gameStatus}
+      />
     );
   }
 }
